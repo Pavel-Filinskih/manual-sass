@@ -3,7 +3,7 @@
   `normalize.scss`
   `style.scss`
 
-*ul global/
+global/
   `variables.scss`
   `mixins.scss`
   `fonts.scss`
@@ -33,31 +33,31 @@ style.scss
 
 ### порядок следования CSS свойств
 
-    -позиционирования - `position`, `top`, `bottom`, `left`, `right`
-    -блочной модели - `float`, `display`, `width`, `height`
-    -типографики
-    -оформления
-    -анимации
+  -позиционирования - `position`, `top`, `bottom`, `left`, `right`
+  -блочной модели - `float`, `display`, `width`, `height`
+  -типографики
+  -оформления
+  -анимации
 
 
 ### Вложенные правила SCSS - Не создавайте большую вложенность!
 
 
 ```css
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-  li {
-    display: inline-block;
-    a {
-      display: block;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+      }
     }
   }
-}
 ```
 
 #### CSS
@@ -81,19 +81,19 @@ nav {
 # Вложенные родительские элементы SCSS
 
 ```scss
-.super-button {
-    &-red { color: red; }
-    &-blue { color: blue; }
-}
-
-.btn {
-  &-primary{
-      background-color: white;
-        &-hover, &:hover{
-          background-color: blue;
-      }
+  .super-button {
+      &-red { color: red; }
+      &-blue { color: blue; }
   }
-}
+
+  .btn {
+    &-primary{
+        background-color: white;
+          &-hover, &:hover{
+            background-color: blue;
+        }
+    }
+  }
 ```
 
 #### CSS
@@ -118,13 +118,13 @@ nav {
 ### Переменные SASS
 
 ```scss
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+  $font-stack: Helvetica, sans-serif;
+  $primary-color: #333;
 
-body
+  body
 
-  font: 100% $font-stack;
-  color: $primary-color;
+    font: 100% $font-stack;
+    color: $primary-color;
 ```
 
 #### CSS
@@ -139,16 +139,16 @@ body
 ### Строки SCSS
 
 ```scss
-$image_dir: 'images/web/';
-$page: 12;
+  $image_dir: 'images/web/';
+  $page: 12;
 
-.some {
-  background-image: url( $image_dir + 'pen.gif' );
+  .some {
+    background-image: url( $image_dir + 'pen.gif' );
 
-  &:before {
-    content: "Страница #{ $page }!";
+    &:before {
+      content: "Страница #{ $page }!";
+    }
   }
-}
 ```
 
 #### CSS
