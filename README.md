@@ -1,50 +1,50 @@
 # Организация кода стилей:
 
-  > `normalize.scss`
-  > `style.scss`
+  `normalize.scss`
+  `style.scss`
 
-> global/
-  >> `variables.scss`
-  >> `mixins.scss`
-  >> `fonts.scss`
+global/
+  `variables.scss`
+  `mixins.scss`
+  `fonts.scss`
 
 
 ## Стили для каждого блока в отдельном файле!
 
 
-> blocks/
-  >> main-nav.scss
-  >> news.scss
-  >> page-footer.scss
-  >> page-header.scss
-  >> page-main.scss
-  >> reviews.scss
+blocks/
+  * main-nav.scss
+  * news.scss
+  * page-footer.scss
+  * page-header.scss
+  * page-main.scss
+  * reviews.scss
 
 
-# файл style.scss SASS
+# файл style.scss
 
 
-  > @import "normalize.scss";
-  > @import "variables.scss";
-  > @import "mixins.scss";
-  > @import "global/fonts.scss";
-  > @import "blocks/page-header.scss";
-  > @import "blocks/main-nav.scss";
-  > @import "blocks/page-footer.scss";  
+  * @import "normalize.scss";
+  * @import "variables.scss";
+  * @import "mixins.scss";
+  * @import "global/fonts.scss";
+  * @import "blocks/page-header.scss";
+  * @import "blocks/main-nav.scss";
+  * @import "blocks/page-footer.scss";  
   
 
 # порядок следования CSS свойств
 
-  > -позиционирования - `position`, `top`, `bottom`, `left`, `right`
-  > -блочной модели - `float`, `display`, `width`, `height`
-  > -типографики
-  > -оформления
-  > -анимации
+  * -позиционирования - `position`, `top`, `bottom`, `left`, `right`
+  * -блочной модели - `float`, `display`, `width`, `height`
+  * -типографики
+  * -оформления
+  * -анимации
 
 
 # Вложенные правила SCSS - Не создавайте большую вложенность!
 
-```scss
+```html
 nav {
   ul {
     margin: 0;
