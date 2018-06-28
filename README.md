@@ -1,13 +1,14 @@
 ### Организация кода стилей:
 
-  * `normalize.scss`
-  * `style.scss`
-
+  > `normalize.scss`
+  `style.scss`
+  
+```
 global/
-  - `variables.scss`
-  - `mixins.scss`
-  - `fonts.scss`
-
+  `variables.scss`
+  `mixins.scss`
+  `fonts.scss`
+```
 
 ### Стили для каждого блока в отдельном файле!
 
@@ -19,7 +20,6 @@ blocks/
   page-header.scss
   page-main.scss
   reviews.scss
-```
 
 style.scss
   @import "normalize.scss";
@@ -29,16 +29,17 @@ style.scss
   @import "blocks/page-header.scss";
   @import "blocks/main-nav.scss";
   @import "blocks/page-footer.scss";  
-  
+```
 
 ### порядок следования CSS свойств
 
-  -позиционирования - `position`, `top`, `bottom`, `left`, `right`
-  -блочной модели - `float`, `display`, `width`, `height`
-  -типографики
-  -оформления
-  -анимации
-
+```
+  * > позиционирования - `position`, `top`, `bottom`, `left`, `right`
+  * > блочной модели - `float`, `display`, `width`, `height`
+  * > типографики
+  * > оформления
+  * > анимации
+```
 
 ### Вложенные правила SCSS - Не создавайте большую вложенность!
 
@@ -230,7 +231,7 @@ style.scss
     @include size($width, $height: $width);
   }
 
-  @mixin offset($padding; $margin) {
+  @mixin offset($padding: $margin) {
     padding: $padding;
     margin: $margin;
   }
@@ -349,15 +350,16 @@ style.scss
 В вычислениях допустимо использовать:
 
   > `+ сложение`
-  > `- вычитание`
-  > `/ деление`
-  > `* умножение`
+  `- вычитание`
+  `/ деление`
+  `* умножение`
 
 При вычислении учитывайте, что разные единицы CSS несовместимы друг с другом!
 Нельзя сложить 10% и 500px, можно только 10px и 500px,
 
 В противном случае будет ошибка и компиляция CSS-файла не пройдёт.
 
+```scss
   4em + 2 = 6em
   16px + 2cm = 91.59055px
   (16px + 2cm) / 2 = 45.79528px
@@ -368,3 +370,4 @@ style.scss
   
   4em / 2 = 4em / 2
   12px * 2 = 24px
+```
