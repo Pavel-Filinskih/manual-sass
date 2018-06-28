@@ -1,17 +1,17 @@
 ### Организация кода стилей:
 
-  *`normalize.scss`
-  *`style.scss`
+  * `normalize.scss`
+  * `style.scss`
 
 global/
-  -`variables.scss`
-  -`mixins.scss`
-  -`fonts.scss`
+  - `variables.scss`
+  - `mixins.scss`
+  - `fonts.scss`
 
 
 ### Стили для каждого блока в отдельном файле!
 
-
+```
 blocks/
   main-nav.scss
   news.scss
@@ -19,7 +19,7 @@ blocks/
   page-header.scss
   page-main.scss
   reviews.scss
-
+```
 
 style.scss
   @import "normalize.scss";
