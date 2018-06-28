@@ -33,16 +33,17 @@ style.scss
 
 ### порядок следования CSS свойств
 
-  * > позиционирования - `position`, `top`, `bottom`, `left`, `right`
-  * > блочной модели - `float`, `display`, `width`, `height`
-  * > типографики
-  * > оформления
-  * > анимации
+  * позиционирование - `position`, `top`, `bottom`, `left`, `right`
+  * блочная модель - `float`, `display`, `width`, `height`
+  * типографика
+  * оформление
+  * анимация
 
 ### Вложенные правила SCSS - Не создавайте большую вложенность!
 
+#### SCSS
 
-```css
+```scss
   nav {
     ul {
       margin: 0;
@@ -77,7 +78,9 @@ style.scss
   }
 ```
 
-# Вложенные родительские элементы SCSS
+### Вложенные родительские элементы SCSS
+
+#### SCSS
 
 ```scss
   .super-button {
@@ -116,12 +119,13 @@ style.scss
 
 ### Переменные SASS
 
+#### SCSS
+
 ```scss
   $font-stack: Helvetica, sans-serif;
   $primary-color: #333;
 
   body
-
     font: 100% $font-stack;
     color: $primary-color;
 ```
@@ -136,6 +140,8 @@ style.scss
 ```
 
 ### Строки SCSS
+
+#### SCSS
 
 ```scss
   $image_dir: 'images/web/';
@@ -153,11 +159,18 @@ style.scss
 #### CSS
 
 ```css
-  .some { background-image: url("images/web/pen.gif"); }
-  .some:before { content: "Страница 12!"; }
+  .some {
+      background-image: url("images/web/pen.gif");
+    }
+
+  .some:before {
+      content: "Страница 12!";
+    }
 ```
 
 ### Примеси SCSS
+
+#### SCSS
 
 ```scss
   @mixin cards() {
@@ -193,6 +206,8 @@ style.scss
 ```
 
 ### Примесь с параметром SCSS
+
+#### SCSS
 
 ```scss
   @mixin size($width: 50px, $height: 50px) {
@@ -270,6 +285,8 @@ style.scss
 
 ### Примесь с параметром по умолчанию SCSS
 
+#### SCSS
+
 ```scss
   @mixin big($size: 100500px) {
     width: $size;
@@ -297,6 +314,8 @@ style.scss
 ```
 
 ### цвета SASS
+
+#### SCSS
 
 ```scss
   $blue: #3bbfce; /* цвет */
@@ -356,6 +375,8 @@ style.scss
 Нельзя сложить 10% и 500px, можно только 10px и 500px,
 
 В противном случае будет ошибка и компиляция CSS-файла не пройдёт.
+
+#### SCSS
 
 ```scss
   4em + 2 = 6em
