@@ -1,50 +1,50 @@
-# Организация кода стилей:
+### Организация кода стилей:
 
   `normalize.scss`
   `style.scss`
 
-global/
-  `variables.scss`
-  `mixins.scss`
-  `fonts.scss`
+> global/
+  > > `variables.scss`
+  > > `mixins.scss`
+  > > `fonts.scss`
 
 
-## Стили для каждого блока в отдельном файле!
+### Стили для каждого блока в отдельном файле!
 
 
-blocks/
-  * main-nav.scss
-  * news.scss
-  * page-footer.scss
-  * page-header.scss
-  * page-main.scss
-  * reviews.scss
+> blocks/
+  > > main-nav.scss
+  > > news.scss
+  > > page-footer.scss
+  > > page-header.scss
+  > > page-main.scss
+  > > reviews.scss
 
 
-# файл style.scss
-
-
-  * @import "normalize.scss";
-  * @import "variables.scss";
-  * @import "mixins.scss";
-  * @import "global/fonts.scss";
-  * @import "blocks/page-header.scss";
-  * @import "blocks/main-nav.scss";
-  * @import "blocks/page-footer.scss";  
+> style.scss
+  > > @import "normalize.scss";
+  > > @import "variables.scss";
+  > > @import "mixins.scss";
+  > > @import "global/fonts.scss";
+  > > @import "blocks/page-header.scss";
+  > > @import "blocks/main-nav.scss";
+  > > @import "blocks/page-footer.scss";  
   
 
-# порядок следования CSS свойств
+### порядок следования CSS свойств
 
-  * -позиционирования - `position`, `top`, `bottom`, `left`, `right`
-  * -блочной модели - `float`, `display`, `width`, `height`
-  * -типографики
-  * -оформления
-  * -анимации
+* ul
+    li -позиционирования - `position`, `top`, `bottom`, `left`, `right`
+    li -блочной модели - `float`, `display`, `width`, `height`
+    li -типографики
+    li -оформления
+    li -анимации
 
 
-# Вложенные правила SCSS - Не создавайте большую вложенность!
+### Вложенные правила SCSS - Не создавайте большую вложенность!
 
-```html
+
+```css
 nav {
   ul {
     margin: 0;
@@ -61,7 +61,7 @@ nav {
 }
 ```
 
-## CSS
+#### CSS
 
 ```css
   nav ul {
@@ -97,7 +97,7 @@ nav {
 }
 ```
 
-## CSS
+#### CSS
 
 ```css
   .super-button-red {
@@ -116,7 +116,7 @@ nav {
   }
 ```
 
-# Переменные SASS
+### Переменные SASS
 
 ```scss
 $font-stack: Helvetica, sans-serif;
@@ -128,7 +128,7 @@ body
   color: $primary-color;
 ```
 
-## CSS
+#### CSS
 
 ```css
   body {
@@ -137,7 +137,7 @@ body
   }
 ```
 
-# Строки SCSS
+### Строки SCSS
 
 ```scss
 $image_dir: 'images/web/';
@@ -152,14 +152,14 @@ $page: 12;
 }
 ```
 
-## CSS
+#### CSS
 
 ```css
   .some { background-image: url("images/web/pen.gif"); }
   .some:before { content: "Страница 12!"; }
 ```
 
-# Примеси SCSS
+### Примеси SCSS
 
 ```scss
   @mixin cards() {
@@ -178,7 +178,7 @@ $page: 12;
   }
 ```
 
-## CSS
+#### CSS
 
 ```css
   .news__item {
@@ -194,7 +194,7 @@ $page: 12;
   }
 ```
 
-# Примесь с параметром SCSS
+### Примесь с параметром SCSS
 
 ```scss
   @mixin size($width: 50px, $height: 50px) {
@@ -241,7 +241,7 @@ $page: 12;
   }
 ```
 
-## CSS
+#### CSS
 
 ```css
   .square {
@@ -270,7 +270,7 @@ $page: 12;
   }
 ```
 
-# Примесь с параметром по умолчанию SCSS
+### Примесь с параметром по умолчанию SCSS
 
 ```scss
   @mixin big($size: 100500px) {
@@ -286,7 +286,7 @@ $page: 12;
   }
 ```
 
-## CSS
+#### CSS
 
 ```css
   .block {
@@ -298,7 +298,7 @@ $page: 12;
   }
 ```
 
-# цвета SASS
+### цвета SASS
 
 ```scss
   $blue: #3bbfce; /* цвет */
@@ -329,7 +329,7 @@ $page: 12;
     border-color: $blue
 ```
 
-## Результат в CSS
+#### CSS
 
 ```css
   .content {
@@ -344,7 +344,7 @@ $page: 12;
   }
 ```
 
-# Математические операции
+### Математические операции
 
 
 В вычислениях допустимо использовать:
