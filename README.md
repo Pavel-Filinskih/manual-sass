@@ -1,50 +1,50 @@
 # Организация кода стилей:
 
-  `normalize.scss`
-  `style.scss`
+  > `normalize.scss`
+  > `style.scss`
 
-global/
-  `variables.scss`
-  `mixins.scss`
-  `fonts.scss`
+> global/
+  >> `variables.scss`
+  >> `mixins.scss`
+  >> `fonts.scss`
 
 
 ## Стили для каждого блока в отдельном файле!
 
 
-blocks/
-  main-nav.scss
-  news.scss
-  page-footer.scss
-  page-header.scss
-  page-main.scss
-  reviews.scss
+> blocks/
+  >> main-nav.scss
+  >> news.scss
+  >> page-footer.scss
+  >> page-header.scss
+  >> page-main.scss
+  >> reviews.scss
 
 
 # файл style.scss SASS
 
 
-  @import "normalize.scss";
-  @import "variables.scss";
-  @import "mixins.scss";
-  @import "global/fonts.scss";
-  @import "blocks/page-header.scss";
-  @import "blocks/main-nav.scss";
-  @import "blocks/page-footer.scss";  
+  > @import "normalize.scss";
+  > @import "variables.scss";
+  > @import "mixins.scss";
+  > @import "global/fonts.scss";
+  > @import "blocks/page-header.scss";
+  > @import "blocks/main-nav.scss";
+  > @import "blocks/page-footer.scss";  
   
 
 # порядок следования CSS свойств
 
-  -позиционирования - position, top, bottom, left, right
-  -блочной модели - float, display, width, height
-  -типографики
-  -оформления
-  -анимации
+  > -позиционирования - `position`, `top`, `bottom`, `left`, `right`
+  > -блочной модели - `float`, `display`, `width`, `height`
+  > -типографики
+  > -оформления
+  > -анимации
 
 
 # Вложенные правила SCSS - Не создавайте большую вложенность!
 
-
+```scss
 nav {
   ul {
     margin: 0;
@@ -59,11 +59,11 @@ nav {
     }
   }
 }
-
+```
 
 ## CSS
 
-
+```css
   nav ul {
     margin: 0;
     padding: 0;
@@ -77,11 +77,11 @@ nav {
   nav li a {
     display: block;
   }
-
+```
 
 # Вложенные родительские элементы SCSS
 
-
+```scss
 .super-button {
     &-red { color: red; }
     &-blue { color: blue; }
@@ -95,11 +95,11 @@ nav {
       }
   }
 }
-
+```
 
 ## CSS
 
-
+```css
   .super-button-red {
     color: red;
   }
@@ -114,11 +114,11 @@ nav {
   .btn-primary:hover {
     background-color: blue;
   }
-
+```
 
 # Переменные SASS
 
-
+```scss
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
@@ -126,20 +126,20 @@ body
 
   font: 100% $font-stack;
   color: $primary-color;
-
+```
 
 ## CSS
 
-
+```css
   body {
     font: 100% Helvetica, sans-serif;
     color: #333;
   }
-
+```
 
 # Строки SCSS
 
-
+```scss
 $image_dir: 'images/web/';
 $page: 12;
 
@@ -150,18 +150,18 @@ $page: 12;
     content: "Страница #{ $page }!";
   }
 }
-
+```
 
 ## CSS
 
-
+```css
   .some { background-image: url("images/web/pen.gif"); }
   .some:before { content: "Страница 12!"; }
-
+```
 
 # Примеси SCSS
 
-
+```scss
   @mixin cards() {
     display: inline-block;
     vertical-align: top;
@@ -176,11 +176,11 @@ $page: 12;
     @include cards;
     width: 320px;
   }
-
+```
 
 ## CSS
 
-
+```css
   .news__item {
     display: inline-block;
     vertical-align: top;
@@ -192,11 +192,11 @@ $page: 12;
     vertical-align: top;
     width: 320px;
   }
-
+```
 
 # Примесь с параметром SCSS
 
-
+```scss
   @mixin size($width: 50px, $height: 50px) {
     width: $width;
     height: $height;
@@ -239,11 +239,11 @@ $page: 12;
   .block {
     @include offset(5px; 10px);
   }
-
+```
 
 ## CSS
 
-
+```css
   .square {
     width: 100px;
     height: 100px;
@@ -268,11 +268,11 @@ $page: 12;
       padding: 5px;
       margin: 10px;
   }
-
+```
 
 # Примесь с параметром по умолчанию SCSS
 
-
+```scss
   @mixin big($size: 100500px) {
     width: $size;
   }
@@ -284,11 +284,11 @@ $page: 12;
   .block {
     @include big();
   }
-
+```
 
 ## CSS
 
-
+```css
   .block {
     width: 10px;
   }
@@ -296,11 +296,11 @@ $page: 12;
   .block {
     width: 100500px;
   }
-
+```
 
 # цвета SASS
 
-
+```scss
   $blue: #3bbfce; /* цвет */
   $margin: 16px; /* отступ */
   $fontSize: 14px; /* размер текста */
@@ -327,11 +327,11 @@ $page: 12;
     padding: $margin / 2
     margin: $margin / 2
     border-color: $blue
-
+```
 
 ## Результат в CSS
 
-
+```css
   .content {
     border: 1px solid #3bbfce;
     color: #217882; 
@@ -342,17 +342,17 @@ $page: 12;
     margin: 8px;
     border-color: #3bbfce; 
   }
-
+```
 
 # Математические операции
 
 
 В вычислениях допустимо использовать:
 
-  `+ сложение`
-  `- вычитание`
-  `/ деление`
-  `* умножение`
+  > `+ сложение`
+  > `- вычитание`
+  > `/ деление`
+  > `* умножение`
 
 При вычислении учитывайте, что разные единицы CSS несовместимы друг с другом!
 Нельзя сложить 10% и 500px, можно только 10px и 500px,
