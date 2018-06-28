@@ -1,13 +1,13 @@
 ### Организация кода стилей:
 
   > `normalize.scss`
-  `style.scss`
+  > > `style.scss`
   
 ```
 global/
-  `variables.scss`
-  `mixins.scss`
-  `fonts.scss`
+  variables.scss
+  mixins.scss
+  fonts.scss
 ```
 
 ### Стили для каждого блока в отдельном файле!
@@ -33,13 +33,11 @@ style.scss
 
 ### порядок следования CSS свойств
 
-```
   * > позиционирования - `position`, `top`, `bottom`, `left`, `right`
   * > блочной модели - `float`, `display`, `width`, `height`
   * > типографики
   * > оформления
   * > анимации
-```
 
 ### Вложенные правила SCSS - Не создавайте большую вложенность!
 
