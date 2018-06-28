@@ -3,42 +3,41 @@
   `normalize.scss`
   `style.scss`
 
-> global/
-  > > `variables.scss`
-  > > `mixins.scss`
-  > > `fonts.scss`
+*ul global/
+  `variables.scss`
+  `mixins.scss`
+  `fonts.scss`
 
 
 ### Стили для каждого блока в отдельном файле!
 
 
-> blocks/
-  > > main-nav.scss
-  > > news.scss
-  > > page-footer.scss
-  > > page-header.scss
-  > > page-main.scss
-  > > reviews.scss
+blocks/
+  main-nav.scss
+  news.scss
+  page-footer.scss
+  page-header.scss
+  page-main.scss
+  reviews.scss
 
 
-> style.scss
-  > > @import "normalize.scss";
-  > > @import "variables.scss";
-  > > @import "mixins.scss";
-  > > @import "global/fonts.scss";
-  > > @import "blocks/page-header.scss";
-  > > @import "blocks/main-nav.scss";
-  > > @import "blocks/page-footer.scss";  
+style.scss
+  @import "normalize.scss";
+  @import "variables.scss";
+  @import "mixins.scss";
+  @import "global/fonts.scss";
+  @import "blocks/page-header.scss";
+  @import "blocks/main-nav.scss";
+  @import "blocks/page-footer.scss";  
   
 
 ### порядок следования CSS свойств
 
-* ul
-    li -позиционирования - `position`, `top`, `bottom`, `left`, `right`
-    li -блочной модели - `float`, `display`, `width`, `height`
-    li -типографики
-    li -оформления
-    li -анимации
+    -позиционирования - `position`, `top`, `bottom`, `left`, `right`
+    -блочной модели - `float`, `display`, `width`, `height`
+    -типографики
+    -оформления
+    -анимации
 
 
 ### Вложенные правила SCSS - Не создавайте большую вложенность!
